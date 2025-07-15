@@ -13,9 +13,9 @@ spec:
         app: argocd-mgomes-d
     spec:
       containers:
-        - image: wil42/playground:v1
-          name: argocd-mgomes-d
-      ports:
-        - containerPort: 8888
-          name: http
-          protocol: TCP
+        - name: argocd-mgomes-d
+          image: wil42/playground:v1
+          ports:
+            - containerPort: 8888
+              name: http
+              protocol: TCP

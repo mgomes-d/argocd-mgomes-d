@@ -1,10 +1,12 @@
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: argocd-mgomes-d
 spec:
+  selector:
+    app: argocd-mgomes-d
   ports:
     - port: 8888
       targetPort: 8888
-  selector:
-    app: argocd-mgomes-d
+      protocol: TCP
+# argocd app create argocd-mgomes-d --repo https://github.com/mgomes-d/argocd-mgomes-d.git --path argocd-deploy --dest-server https://kubernetes.default.svc --dest-namespace dev
