@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-mgomes-d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd-mgomes-d
+  template:
+    metadata:
+      labels:
+        app: argocd-mgomes-d
+    spec:
+      containers:
+        - image: wil42/playground:v1
+          name: argocd-mgomes-d
+      ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP

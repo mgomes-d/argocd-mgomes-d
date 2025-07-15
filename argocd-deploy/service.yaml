@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: argocd-mgomes-d
+spec:
+  ports:
+    - port: 8888
+      targetPort: 8888
+  selector:
+    app: argocd-mgomes-d
